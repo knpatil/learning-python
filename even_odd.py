@@ -12,7 +12,7 @@ def isEvenOdd(number):
     else:
         print(number, " is odd")
 
-isEvenOdd(142113) # execute this code
+isEvenOdd(1) # execute this code
 
 # assignment
 
