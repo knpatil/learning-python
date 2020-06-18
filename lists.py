@@ -45,8 +45,6 @@ del cities[3]
 
 print(cities)
 
-# cities.remove(3)
-
 # Stack data structure
 
 cities.append("Nashik")  # push
