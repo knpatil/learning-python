@@ -41,7 +41,7 @@ def describe_pet2(pet_name, animal_type="Dog"):  # default value
 
 
 describe_pet2("Tommy")  # second argument is not needed, it has default value
-describe_pet2(pet_name="tommy")
+describe_pet2(pet_name="tommy")  # keyword argument
 describe_pet2("Minnie", "Cat")
 describe_pet2(pet_name="Mickey", animal_type="Mouse")
 describe_pet2(animal_type="Mouse", pet_name="Mickey")
@@ -57,6 +57,7 @@ def get_formatted_name(first_name, last_name):
 cricketer = get_formatted_name("Sachin", "Tendulkar")
 print(f"\nFull name is '{cricketer}'")
 
+
 def get_formatted_name2(first_name, last_name, middle_name=''):
     """"Return a full name, neatly formatted"""
 
@@ -67,11 +68,13 @@ def get_formatted_name2(first_name, last_name, middle_name=''):
 
     return full_name
 
+
 cricketer2 = get_formatted_name2("Sachin", "Tendulkar")
 print(f"\nFull name is '{cricketer2}'")
 
 cricketer3 = get_formatted_name2("Sachin", "Tendulkar", "Ramesh")
 print(f"\nFull name is '{cricketer3}'")
+
 
 # returning a dictionary
 def build_person(first_name, last_name, age=None):
@@ -80,6 +83,7 @@ def build_person(first_name, last_name, age=None):
     if age:
         person["age"] = age
     return person
+
 
 dancer = build_person("Michael", "Jackson")
 print(dancer)
@@ -105,10 +109,11 @@ def display(list_of_models):
         print(model)
     list_of_models.append("BMW")
 
+
 car_models = ["Honda", "Toyota", "Audi"]
 print("Car Models:", car_models)
 
-display(car_models) # passing a reference, in python, everything is object
+display(car_models)  # passing a reference, in python, everything is object
 
 print("Car Models:", car_models)
 
@@ -117,37 +122,55 @@ print("-" * 80)
 # not to modify original list
 car_models2 = ["Honda", "Toyota", "Audi"]
 print("Car Models:", car_models2)
-display(car_models2[:]) # create a list slice (copy)
+display(car_models2[:])  # create a list slice (copy)
 print("Car Models:", car_models2)
 
+
 # variable number of arguments
-def make_pizza(size, *toppings):
+def make_pizza(size, *toppings):  # arbitrary arguments
     """Print the list of toppings that have been requested"""
     print(f"Pizza Size: {size}")
     print(f"\t with toppings: {toppings}")
 
+    print("type=", type(toppings))  # immutable list -> tuple, list of values
+
+
 make_pizza("Small", "Olives")
-make_pizza("Medium", "Olives","Onion","Tomato","Paneer")
-make_pizza("Small", "Olives","Tomato","Paneer")
-make_pizza("Large", "Olives","Tomato","Paneer")
+make_pizza("Medium", "Olives", "Onion", "Tomato", "Paneer")
+make_pizza("Small", "Olives", "Tomato", "Paneer")
+make_pizza("Large", "Olives", "Tomato", "Paneer")
 
 
+#
+# arbitrary keyword arguments
+#
+def build_profile(first, last, **user_info):
+    """Build a dictionary containing everything we know about a user"""
+
+    user_info['first_name'] = first
+    user_info['last_name'] = last
+
+    return user_info
 
 
+user_profile = build_profile('albert', 'einstein', location='Lake Tahoe', field='physics', job='scientist')
+print("\n\nUser Profile: ", user_profile)
+
+user_profile = build_profile('isac', 'newton')
+print("\n\nUser Profile: ", user_profile)
 
 
+def make_car(model, car_type, **car_info):
+    car_info['model'] = model
+    car_info['type'] = car_type
+    return car_info
 
 
+car = make_car('subaru', 'outback', color='blue', tow_package=True)
+print("Car Details: ", car)
 
-
-
-
-
-
-
-
-
-
-
-
-
+#
+# Modules in python: collection of functions stored in some file
+# organizing code
+# all the related function in one module: math.py ->> sin, cos, tan
+#
