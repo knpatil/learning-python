@@ -26,24 +26,21 @@ class Car:
         print(f"Painting the car with color {color}")
         self.color = color
 
-my_new_car = Car("Audi", 'A4', 2020)
-my_new_car.get_description()
-my_new_car.read_odometer()
+    def fill_gas_tank(self):
+        print(f"Filling gas tank in this model {self.model}")
 
-my_new_car.drive_car(10)
-my_new_car.read_odometer()
-
-my_new_car.drive_car(400)
-my_new_car.read_odometer()
-
-my_new_car.drive_car(200)
-my_new_car.read_odometer()
-
-my_new_car.paint_car("Blue")
-my_new_car.get_description()
-
-
-
-
-
-
+# my_new_car = Car("Audi", 'A4', 2020)
+# my_new_car.get_description()
+# my_new_car.read_odometer()
+#
+# my_new_car.drive_car(10)
+# my_new_car.read_odometer()
+#
+# my_new_car.drive_car(400)
+# my_new_car.read_odometer()
+#
+# my_new_car.drive_car(200)
+# my_new_car.read_odometer()
+#
+# my_new_car.paint_car("Blue")
+# my_new_car.get_description()

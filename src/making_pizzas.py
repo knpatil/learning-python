@@ -10,7 +10,7 @@
 
 # to avoid namespace conflict
 
-import pizza as p
+from src import pizza as p
 
 p.display_pizza_menu()
 p.make_pizza("Large", "Tomato", "Olives", "Onion")
