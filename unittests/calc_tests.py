@@ -25,7 +25,7 @@ class CalcTestCase(unittest.TestCase):
         result = addition(num1, num2)
 
         # 3. verify the result
-        self.assertEqual(result, 400)  # verify the result
+        self.assertEqual(result, -400)  # verify the result
 
     def test_with_negative_numbers3(self):
         # 1. setup test data

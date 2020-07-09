@@ -1,5 +1,6 @@
 class Car:
 
+    # constructor
     def __init__(self, make, model, year):
         self.make = make
         self.model = model
@@ -7,6 +8,10 @@ class Car:
         # odometer
         self.odometer_reading = 0
         self.color = "red"
+
+    # to string method -- means string representation of object
+    def __str__(self):
+        return f"CAR: model={self.model},make={self.make},year={self.year}"
 
     def get_description(self):
         print("My car details: ")
@@ -29,7 +34,21 @@ class Car:
     def fill_gas_tank(self):
         print(f"Filling gas tank in this model {self.model}")
 
-# my_new_car = Car("Audi", 'A4', 2020)
+
+
+
+my_new_car = Car("Audi", 'A4', 2020)
+
+x = 10
+name = "xyz"
+print(x)
+print(name)
+
+print(my_new_car)  # __str__ tostring
+car2 = Car("BMW", 'Series 5', 2023)
+print(car2)
+
+
 # my_new_car.get_description()
 # my_new_car.read_odometer()
 #
