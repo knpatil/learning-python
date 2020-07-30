@@ -5,7 +5,7 @@ my_stack = Stack()
 
 my_stack.print()
 
-print("Empty?", my_stack.isEmpty())
+print("Empty?", my_stack.is_empty())
 print("Size of the stack = ", my_stack.size())
 
 my_stack.push(10)
@@ -15,7 +15,7 @@ my_stack.push(12)
 my_stack.print()
 
 
-print("Empty?", my_stack.isEmpty())
+print("Empty?", my_stack.is_empty())
 print("Size of the stack = ", my_stack.size())
 
 item = my_stack.pop()

@@ -17,12 +17,13 @@
 # LIFO -- last in first out
 # first in last out -- FILO
 #
+
 class Stack:
 
     def __init__(self):
         self.items = list()  # lists are dynamic,
 
-    def isEmpty(self):
+    def is_empty(self):
         """check if the stack is empty or not"""
         if len(self.items) == 0:
             return True
