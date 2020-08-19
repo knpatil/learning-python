@@ -20,8 +20,12 @@ def binary_search(arr, n):
     found = False
     index = -1     # error condition
 
+    # integer overflow, int, float, double
+
     while not found and low <= high:
-        mid = (low + high) // 2
+        # mid = (low + high) // 2
+        mid = low + ((high - low) // 2) # integer overflow cases for big numbers
+
         # print(f"mid = {mid}")
 
         if arr[mid] == n:
